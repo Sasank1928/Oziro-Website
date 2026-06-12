@@ -1,0 +1,150 @@
+.testimonials {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.carouselContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carouselWrapper {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  min-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  padding: 50px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  color: #fbbf24; /* yellow-400 */
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.content {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.authorInfo h4 {
+  font-size: 1.2rem;
+  color: var(--accent-primary);
+  margin-bottom: 5px;
+}
+
+.authorInfo p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navBtn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: var(--neon-shadow);
+}
+
+.prev {
+  left: -25px;
+}
+
+.next {
+  right: -25px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glass-border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .navBtn {
+    display: none;
+  }
+  
+  .card {
+    padding: 40px 20px;
+  }
+  
+  .content {
+    font-size: 1.1rem;
+  }
+}

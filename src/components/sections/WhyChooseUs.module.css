@@ -1,0 +1,130 @@
+.whyChoose {
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.featuresList h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+}
+
+.featuresList ul {
+  list-style: none;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.icon {
+  color: var(--accent-primary);
+  margin-right: 15px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.comparisonTable {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tableHeader {
+  display: flex;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--accent-primary);
+}
+
+.tableRow {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid var(--glass-border);
+  transition: background 0.3s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.colFeature {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.colOziro {
+  flex: 1.5;
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+.colOthers {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableHeader, .tableRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .colFeature, .colOziro, .colOthers {
+    flex: auto;
+  }
+  
+  .colFeature {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+}

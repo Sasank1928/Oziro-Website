@@ -1,0 +1,39 @@
+:root {
+  /* Dark Mode Palette */
+  --bg-dark: #050816;
+  --bg-dark-secondary: #0B1120;
+  --accent-blue: #00E5FF;
+  --neon-purple: #7B61FF;
+  --text-white: #FFFFFF;
+  --text-gray: #94A3B8;
+
+  /* Light Mode Palette */
+  --bg-light: #F8FAFC;
+  --bg-light-secondary: #FFFFFF;
+  --accent-blue-light: #2563EB;
+  --accent-cyan: #06B6D4;
+  --text-dark: #0F172A;
+
+  /* Default Variables (Dark Theme Default) */
+  --bg-primary: var(--bg-dark);
+  --bg-secondary: var(--bg-dark-secondary);
+  --accent-primary: var(--accent-blue);
+  --accent-secondary: var(--neon-purple);
+  --text-primary: var(--text-white);
+  --text-secondary: var(--text-gray);
+  --glass-bg: rgba(11, 17, 32, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --neon-shadow: 0 0 15px var(--accent-blue);
+}
+
+[data-theme='light'] {
+  --bg-primary: var(--bg-light);
+  --bg-secondary: var(--bg-light-secondary);
+  --accent-primary: var(--accent-blue-light);
+  --accent-secondary: var(--accent-cyan);
+  --text-primary: var(--text-dark);
+  --text-secondary: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --neon-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
