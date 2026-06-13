@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 const navLinks = [
   { name: 'Home', href: '#home', isSection: true },
   { name: 'About', href: '#about', isSection: true },
+  { name: 'Services', href: '/services', isSection: false },
   { name: 'Products', href: '/products', isSection: false },
   { name: 'Contact', href: '#contact', isSection: true },
 ];

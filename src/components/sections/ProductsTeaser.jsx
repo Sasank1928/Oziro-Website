@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BsArrowRight, BsGearWideConnected } from 'react-icons/bs';
 import styles from './ProductsTeaser.module.css';
-import hologramImage from '../../assets/hologram_avatar.png';
+import carImage from '../../assets/car_avatar.png';
 
 const ProductsTeaser = () => {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const ProductsTeaser = () => {
             <div className={styles.meshGlow}></div>
             <div className={styles.hologramRing}></div>
             <div className={styles.hologramRingOuter}></div>
-            <img src={hologramImage} alt="Hologram Catalog Preview" className={styles.visualImage} />
+            <img src={carImage} alt="Oziro CyberRover Preview" className={styles.visualImage} />
           </div>
         </div>
       </div>

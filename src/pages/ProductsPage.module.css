@@ -47,121 +47,71 @@
   color: var(--text-secondary);
 }
 
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.navBtn {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: var(--text-primary);
-  flex: 1 1 250px;
-  max-width: 280px;
-}
-
-.navBtn:hover {
-  border-color: var(--accent-primary);
-  transform: translateX(5px);
-  background: rgba(0, 229, 255, 0.05);
-}
-
-.navBtn.active {
-  border-color: var(--accent-primary);
-  background: rgba(0, 229, 255, 0.1);
-  box-shadow: var(--neon-shadow);
-}
-
-.navBtn h4 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.navBtn p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.showcaseContainer {
+.productsGrid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 40px;
-  align-items: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  width: 100%;
 }
 
-.detailsPanel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+.productCard {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.productBadge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--accent-primary);
-  letter-spacing: 1px;
-}
-
-.detailsPanel h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.productSpec {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0 0 10px 0;
-}
-
-.imagePanel {
-  position: relative;
-  height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
-.productImage {
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cardImage {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 20px;
-  filter: drop-shadow(0 0 35px rgba(0, 229, 255, 0.25)) drop-shadow(0 0 60px rgba(123, 97, 255, 0.15));
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.15)) drop-shadow(0 0 30px rgba(123, 97, 255, 0.1));
+  transition: transform 0.4s ease;
 }
 
-.specsBtn {
+.productCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.cardSpec {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 25px;
+  flex: 1; /* Pushes button to bottom */
+}
+
+.detailsBtn {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   color: #0b1120;
   border: none;
@@ -175,54 +125,14 @@
   text-align: center;
 }
 
-
-.specsBtn:hover {
+.detailsBtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 15px var(--accent-primary);
 }
 
-@media (max-width: 992px) {
-  .grid {
-    gap: 30px;
-  }
-  
-  .sidebar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    justify-content: flex-start;
-  }
-  
-  .navBtn {
-    flex-shrink: 0;
-    width: 240px;
-    max-width: none;
-  }
-  
-  .showcaseContainer {
+@media (max-width: 768px) {
+  .productsGrid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  
-  .imagePanel {
-    height: 380px;
-    order: 1; /* Image first on mobile showcase */
-  }
-  
-  .detailsPanel {
-    order: 2; /* Details second */
-  }
-  
-  .productImage {
-    padding: 10px;
-    max-height: 350px;
-  }
 }
-
-@media (max-width: 576px) {
-  .imagePanel {
-    height: 300px;
-  }
-}
-
-

@@ -1,0 +1,288 @@
+.page {
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 60px 0 100px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-primary);
+  background: rgba(0, 229, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.heroSection {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.techStack {
+  padding: 60px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.techStack h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.techStack > p {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.stackItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.stackItem:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 229, 255, 0.05);
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: var(--accent-primary);
+  margin-bottom: 15px;
+}
+
+.stackItem h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.stackItem p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.architecturesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.architectureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.archCard {
+  padding: 50px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.archCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.archIconWrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 229, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.archIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--accent-primary);
+}
+
+.archCard h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.archDesc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.featureList li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.featureList li strong {
+  color: var(--text-primary);
+}
+
+.featureList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+.simpleList {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.numberedList {
+  list-style-type: decimal;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.navStructure {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 60px;
+  border: 1px solid var(--glass-border);
+}
+
+.navStructure h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.navDesc {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.navTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.navTable th,
+.navTable td {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navTable th {
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.navTable td {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.navTable td strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 992px) {
+  .architectureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .techStack {
+    padding: 40px 20px;
+  }
+  
+  .archCard {
+    padding: 30px;
+  }
+  
+  .navStructure {
+    padding: 40px 20px;
+  }
+  
+  .navTable th,
+  .navTable td {
+    padding: 15px 10px;
+  }
+}

@@ -164,13 +164,6 @@ const Hero = () => {
               Explore Technologies
             </a>
             <a 
-              href="#products" 
-              className={`${styles.btn} ${styles.secondaryBtn}`}
-              onClick={(e) => handleScrollTo(e, '#products')}
-            >
-              View Solutions
-            </a>
-            <a 
               href="#contact" 
               className={`${styles.btn} ${styles.outlineBtn}`}
               onClick={(e) => handleScrollTo(e, '#contact')}

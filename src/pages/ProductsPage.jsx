@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './ProductsPage.module.css';
 
 // Import high-fidelity static image assets
@@ -22,9 +22,7 @@ const products = [
   { id: 'hologram', name: 'HoloCore Projector', spec: 'Interactive volumetric display projector', image: hologramAvatar },
 ];
 
-
 const ProductsPage = () => {
-  const [activeProduct, setActiveProduct] = useState(0);
   const navigate = useNavigate();
 
   return (
@@ -36,48 +34,31 @@ const ProductsPage = () => {
           <p className={styles.subtitle}>Explore our state-of-the-art enterprise-ready autonomous hardware solutions.</p>
         </div>
 
-        <div className={styles.grid}>
-          <div className={styles.sidebar}>
-            {products.map((p, idx) => (
-              <button 
-                key={p.id} 
-                className={`${styles.navBtn} ${activeProduct === idx ? styles.active : ''}`}
-                onClick={() => setActiveProduct(idx)}
-              >
-                <h4>{p.name}</h4>
-                <p>{p.spec}</p>
-              </button>
-            ))}
-          </div>
-
-          <div className={styles.showcaseContainer}>
-            <div className={styles.detailsPanel}>
-               <span className={styles.productBadge}>Active Model</span>
-               <h2>{products[activeProduct].name}</h2>
-               <p className={styles.productSpec}>{products[activeProduct].spec}</p>
-               <button 
-                 className={styles.specsBtn}
-                 onClick={() => navigate(`/products/${products[activeProduct].id}`)}
-               >
-                 View Specifications &rarr;
-               </button>
-            </div>
-            
-            <div className={styles.imagePanel}>
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={products[activeProduct].id}
-                  src={products[activeProduct].image}
-                  alt={products[activeProduct].name}
-                  className={styles.productImage}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.02 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                />
-              </AnimatePresence>
-            </div>
-          </div>
+        <div className={styles.productsGrid}>
+          {products.map((p, idx) => (
+            <motion.div 
+              key={p.id} 
+              className={`${styles.productCard} glass-panel`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <div className={styles.cardImageWrapper}>
+                <img src={p.image} alt={p.name} className={styles.cardImage} />
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{p.name}</h3>
+                <p className={styles.cardSpec}>{p.spec}</p>
+                <button 
+                  className={styles.detailsBtn}
+                  onClick={() => navigate(`/products/${p.id}`)}
+                >
+                  View Details
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

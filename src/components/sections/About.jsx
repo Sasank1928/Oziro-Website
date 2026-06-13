@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './About.module.css';
 import { FiTarget, FiCrosshair, FiCpu } from 'react-icons/fi';
-import humanoidAvatar from '../../assets/humanoid_avatar.png';
+import agvAvatar from '../../assets/agv_avatar.png';
 
 const About = () => {
   const ref = useRef(null);
@@ -33,7 +33,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
           >
             <div className={styles.glowBg}></div>
-            <img src={humanoidAvatar} alt="Oziro Humanoid Robot Model" className={styles.aboutImage} />
+            <img src={agvAvatar} alt="Oziro AGV Robot Model" className={styles.aboutImage} />
           </motion.div>
 
           <motion.div 

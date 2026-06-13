@@ -11,6 +11,8 @@ import Labs from './pages/Labs';
 import Careers from './pages/Careers';
 import Newsroom from './pages/Newsroom';
 import ProductsPage from './pages/ProductsPage';
+import Services from './pages/Services';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   useEffect(() => {
@@ -54,6 +56,7 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="/solutions/:solutionId" element={<SolutionDetail />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/labs" element={<Labs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/news" element={<Newsroom />} />

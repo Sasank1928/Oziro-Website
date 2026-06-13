@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './Contact.module.css';
-import humanoidAvatar from '../../assets/humanoid_avatar.png';
+import hologramAvatar from '../../assets/hologram_avatar.png';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -43,7 +43,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <div className={styles.glowBg}></div>
-            <img src={humanoidAvatar} alt="Oziro Humanoid Contact Assistant" className={styles.contactImage} />
+            <img src={hologramAvatar} alt="Oziro Contact Assistant" className={styles.contactImage} />
           </motion.div>
 
           <motion.div 
