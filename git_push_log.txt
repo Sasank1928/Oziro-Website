@@ -1,0 +1,101 @@
+
+> git init
+Initialized empty Git repository in C:/Users/gvenu/Desktop/Oziro Website/.git/
+
+> git add .
+
+> git commit -m "Initial commit for Oziro Website"
+[master (root-commit) 20c7d86] Initial commit for Oziro Website
+ 78 files changed, 10697 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 eslint.config.js
+ create mode 100644 gh_test.txt
+ create mode 100644 git_test.txt
+ create mode 100644 index.html
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 public/favicon.svg
+ create mode 100644 public/icons.svg
+ create mode 100644 src/App.jsx
+ create mode 100644 src/assets/agv_avatar.png
+ create mode 100644 src/assets/arm_avatar.png
+ create mode 100644 src/assets/car_avatar.png
+ create mode 100644 src/assets/dog_avatar.png
+ create mode 100644 src/assets/drone_avatar.png
+ create mode 100644 src/assets/hero.png
+ create mode 100644 src/assets/hologram_avatar.png
+ create mode 100644 src/assets/humanoid_avatar.png
+ create mode 100644 src/assets/new_logo.jpg
+ create mode 100644 src/assets/oziro_logo.jpg
+ create mode 100644 src/assets/oziro_logo.png
+ create mode 100644 src/assets/react.svg
+ create mode 100644 src/assets/vite.svg
+ create mode 100644 src/components/3d/AboutScene.jsx
+ create mode 100644 src/components/3d/CpuScene.jsx
+ create mode 100644 src/components/3d/GlobeScene.jsx
+ create mode 100644 src/components/3d/HeroScene.jsx
+ create mode 100644 src/components/3d/TechSphere.jsx
+ create mode 100644 src/components/sections/About.jsx
+ create mode 100644 src/components/sections/About.module.css
+ create mode 100644 src/components/sections/Contact.jsx
+ create mode 100644 src/components/sections/Contact.module.css
+ create mode 100644 src/components/sections/Hero.jsx
+ create mode 100644 src/components/sections/Hero.module.css
+ create mode 100644 src/components/sections/Industries.jsx
+ create mode 100644 src/components/sections/Industries.module.css
+ create mode 100644 src/components/sections/Innovation.jsx
+ create mode 100644 src/components/sections/Innovation.module.css
+ create mode 100644 src/components/sections/PopularProducts.jsx
+ create mode 100644 src/components/sections/PopularProducts.module.css
+ create mode 100644 src/components/sections/ProductsTeaser.jsx
+ create mode 100644 src/components/sections/ProductsTeaser.module.css
+ create mode 100644 src/components/sections/Solutions.jsx
+ create mode 100644 src/components/sections/Solutions.module.css
+ create mode 100644 src/components/sections/Statistics.jsx
+ create mode 100644 src/components/sections/Statistics.module.css
+ create mode 100644 src/components/sections/Technology.jsx
+ create mode 100644 src/components/sections/Technology.module.css
+ create mode 100644 src/components/sections/Testimonials.jsx
+ create mode 100644 src/components/sections/Testimonials.module.css
+ create mode 100644 src/components/sections/WhyChooseUs.jsx
+ create mode 100644 src/components/sections/WhyChooseUs.module.css
+ create mode 100644 src/components/ui/Footer.jsx
+ create mode 100644 src/components/ui/Footer.module.css
+ create mode 100644 src/components/ui/Navbar.jsx
+ create mode 100644 src/components/ui/Navbar.module.css
+ create mode 100644 src/components/ui/ScrollToTop.jsx
+ create mode 100644 src/components/ui/ThemeToggle.jsx
+ create mode 100644 src/components/ui/ThemeToggle.module.css
+ create mode 100644 src/context/ThemeContext.jsx
+ create mode 100644 src/main.jsx
+ create mode 100644 src/pages/Careers.jsx
+ create mode 100644 src/pages/Careers.module.css
+ create mode 100644 src/pages/Home.jsx
+ create mode 100644 src/pages/Labs.jsx
+ create mode 100644 src/pages/Labs.module.css
+ create mode 100644 src/pages/Newsroom.jsx
+ create mode 100644 src/pages/Newsroom.module.css
+ create mode 100644 src/pages/ProductDetail.jsx
+ create mode 100644 src/pages/ProductDetail.module.css
+ create mode 100644 src/pages/ProductsPage.jsx
+ create mode 100644 src/pages/ProductsPage.module.css
+ create mode 100644 src/pages/SolutionDetail.jsx
+ create mode 100644 src/pages/SolutionDetail.module.css
+ create mode 100644 src/styles/global.css
+ create mode 100644 src/styles/theme.css
+ create mode 100644 vite.config.js
+
+> git branch -M main
+
+> git remote remove origin
+ERROR: Command failed: git remote remove origin
+error: No such remote: 'origin'
+
+
+error: No such remote: 'origin'
+
+> git remote add origin https://github.com/Sasank1928/Oziro-Website.git
+
+> git push -u origin main
+branch 'main' set up to track 'origin/main'.
