@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './Technology.module.css';
-import hologramAvatar from '../../assets/hologram_avatar.png';
 
 const technologies = [
   "Artificial Intelligence",
@@ -63,15 +62,6 @@ const Technology = () => {
                 </motion.li>
               ))}
             </ul>
-          </motion.div>
-
-          <motion.div 
-            className={styles.canvasContainer}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <img src={hologramAvatar} alt="Oziro Volumetric Hologram Display" className={styles.techImage} />
           </motion.div>
         </div>
       </div>

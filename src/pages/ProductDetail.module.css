@@ -114,20 +114,6 @@
   justify-content: center;
 }
 
-.productImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 40px;
-  filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.2));
-  transition: transform 0.5s ease;
-}
-
-.canvasWrapper:hover .productImage {
-  transform: scale(1.04) translateY(-3px);
-}
-
-
 .canvasHint {
   text-align: center;
   font-size: 0.85rem;

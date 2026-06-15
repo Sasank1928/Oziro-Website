@@ -2,24 +2,18 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import styles from './ProductsPage.module.css';
+import ProductScene from '../components/3d/ProductScene';
 
-// Import high-fidelity static image assets
-import humanoidAvatar from '../assets/humanoid_avatar.png';
-import droneAvatar from '../assets/drone_avatar.png';
-import dogAvatar from '../assets/dog_avatar.png';
-import armAvatar from '../assets/arm_avatar.png';
-import agvAvatar from '../assets/agv_avatar.png';
-import carAvatar from '../assets/car_avatar.png';
-import hologramAvatar from '../assets/hologram_avatar.png';
+
 
 const products = [
-  { id: 'humanoid', name: 'Oziro Humanoid V1', spec: 'Next-gen bipedal humanoid assistant', image: humanoidAvatar },
-  { id: 'dog', name: 'QuadDog Alpha', spec: 'All-terrain quadruped robotic platform', image: dogAvatar },
-  { id: 'car', name: 'Oziro CyberRover V1', spec: 'High-speed autonomous tactical rover car', image: carAvatar },
-  { id: 'agv', name: 'AutoBot AGV', spec: 'Heavy-duty autonomous logistics vehicle', image: agvAvatar },
-  { id: 'arm', name: 'RoboArm Flex', spec: 'High-precision 6-axis collaborative arm', image: armAvatar },
-  { id: 'drone', name: 'AeroDrone X', spec: 'Autonomous aerial surveillance & inspection', image: droneAvatar },
-  { id: 'hologram', name: 'HoloCore Projector', spec: 'Interactive volumetric display projector', image: hologramAvatar },
+  { id: 'humanoid', name: 'Humanoid Assistant Robot', spec: 'Next-gen bipedal humanoid assistant' },
+  { id: 'dog', name: 'All-Terrain Quadruped Robot', spec: 'All-terrain quadruped robotic platform' },
+  { id: 'car', name: 'Autonomous Tactical Rover', spec: 'High-speed autonomous tactical rover car' },
+  { id: 'agv', name: 'Heavy-Duty Logistics Vehicle', spec: 'Heavy-duty autonomous logistics vehicle' },
+  { id: 'arm', name: 'Collaborative Robotic Arm', spec: 'High-precision 6-axis collaborative arm' },
+  { id: 'drone', name: 'Surveillance & Inspection Drone', spec: 'Autonomous aerial surveillance & inspection' },
+  { id: 'hologram', name: 'Interactive Volumetric Projector', spec: 'Interactive volumetric display projector' },
 ];
 
 const TiltCard = ({ children, p, idx, navigate }) => {
@@ -73,7 +67,7 @@ const TiltCard = ({ children, p, idx, navigate }) => {
         }}
       >
         <div className={styles.cardImageWrapper} style={{ transform: "translateZ(70px)" }}>
-          <img src={p.image} alt={p.name} className={`${styles.cardImage} ${styles[p.id]}`} />
+          <ProductScene productId={p.id} isThumbnail={true} />
         </div>
         <div className={styles.cardContent} style={{ transform: "translateZ(40px)" }}>
           <h3 className={styles.cardTitle}>{p.name}</h3>

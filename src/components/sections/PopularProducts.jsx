@@ -2,31 +2,26 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styles from './PopularProducts.module.css';
-import humanoidAvatar from '../../assets/humanoid_avatar.png';
-import droneAvatar from '../../assets/drone_avatar.png';
-import armAvatar from '../../assets/arm_avatar.png';
+import ProductScene from '../3d/ProductScene';
 
 const popularItems = [
   {
     id: 'humanoid',
-    name: 'Oziro Humanoid V1',
+    name: 'Humanoid Assistant Robot',
     tagline: 'Cognitive Assistant',
     desc: 'Equipped with 32 degrees of freedom, stereo depth vision, and force-sensitive hands, designed to assist on mixed-assembly lines and customer reception.',
-    image: humanoidAvatar
   },
   {
     id: 'drone',
-    name: 'AeroDrone X',
+    name: 'Surveillance & Inspection Drone',
     tagline: 'Aerial Recon & Inspector',
     desc: 'Weather-sealed quadcopter platform utilizing edge AI analytics to detect anomalies, cracks, and security breaches over active perimeters.',
-    image: droneAvatar
   },
   {
     id: 'arm',
-    name: 'RoboArm Flex',
+    name: 'Collaborative Robotic Arm',
     tagline: '6-Axis Collaborative Arm',
     desc: 'Collaborative arm featuring zero-code hand-guided training and integrated force sensing for precision pick-and-place, machine tending, and welding.',
-    image: armAvatar
   }
 ];
 
@@ -53,8 +48,8 @@ const PopularProducts = () => {
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                <div className={styles.canvasWrapper}>
-                  <img src={item.image} alt={item.name} className={styles.cardImage} />
+                <div className={styles.canvasWrapper} style={{ height: '220px', width: '100%', position: 'relative' }}>
+                  <ProductScene productId={item.id} isThumbnail={true} />
                 </div>
 
                 <div className={styles.content}>

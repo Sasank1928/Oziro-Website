@@ -2,32 +2,13 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styles from './ProductDetail.module.css';
+import ProductScene from '../components/3d/ProductScene';
 
-// Import high-fidelity static image assets
-import humanoidAvatar from '../assets/humanoid_avatar.png';
-import droneAvatar from '../assets/drone_avatar.png';
-import dogAvatar from '../assets/dog_avatar.png';
-import armAvatar from '../assets/arm_avatar.png';
-import agvAvatar from '../assets/agv_avatar.png';
-import carAvatar from '../assets/car_avatar.png';
-import hologramAvatar from '../assets/hologram_avatar.png';
-
-const productImageMap = {
-  humanoid: humanoidAvatar,
-  drone: droneAvatar,
-  quaddog: dogAvatar,
-  dog: dogAvatar,
-  roboarm: armAvatar,
-  arm: armAvatar,
-  agv: agvAvatar,
-  car: carAvatar,
-  hologram: hologramAvatar
-};
 
 
 const productsData = {
   humanoid: {
-    name: 'Oziro Humanoid V1',
+    name: 'Humanoid Assistant Robot',
     tagline: 'Next-Generation Autonomous Assistant',
     desc: 'The Oziro Humanoid V1 represents the pinnacle of cognitive robotics. Equipped with advanced natural language processing, humanoid locomotion, and high-precision dexterous hands, it is designed to assist in complex office tasks, customer engagement, healthcare assistance, and light manufacturing chores. Built on Oziro\'s proprietary cognitive brain, it learns and adapts to its environment in real-time.',
     specs: [
@@ -53,7 +34,7 @@ const productsData = {
     ]
   },
   drone: {
-    name: 'AeroDrone X',
+    name: 'Surveillance & Inspection Drone',
     tagline: 'Autonomous Industrial Surveillance & Inspection',
     desc: 'AeroDrone X is an autonomous quadcopter designed for heavy-duty aerial inspections and automated perimeter surveillance. Engineered with carbon fiber composites, it can withstand extreme weather conditions. Leveraging edge AI computing, the drone detects anomalies such as thermal leakage, gas emissions, and security breaches without needing manual pilot control.',
     specs: [
@@ -79,7 +60,7 @@ const productsData = {
     ]
   },
   quaddog: {
-    name: 'QuadDog Alpha',
+    name: 'All-Terrain Quadruped Robot',
     tagline: 'All-Terrain Quadruped Robotic Platform',
     desc: 'QuadDog Alpha is an agile four-legged robot designed to go where wheeled systems cannot. With state-of-the-art dynamic balance control, it easily traverses mud, gravel, stairs, and ruins. It acts as an autonomous sensor carrier, inspecting dangerous industrial environments, gas leak zones, and unstructured disaster sites to keep human workers out of harm\'s way.',
     specs: [
@@ -105,7 +86,7 @@ const productsData = {
     ]
   },
   roboarm: {
-    name: 'RoboArm Flex',
+    name: 'Collaborative Robotic Arm',
     tagline: 'High-Precision Collaborative Robotic Arm',
     desc: 'RoboArm Flex is a 6-axis collaborative robotic arm engineered for industrial automation tasks requiring high repeatability and flexibility. Featuring an intuitive training interface, factory floor workers can guide the arm by hand to program pick-and-place, sorting, and packaging routines within minutes, eliminating complex coding cycles.',
     specs: [
@@ -131,7 +112,7 @@ const productsData = {
     ]
   },
   agv: {
-    name: 'AutoBot AGV',
+    name: 'Heavy-Duty Logistics Vehicle',
     tagline: 'Heavy-Duty Autonomous Logistics Vehicle',
     desc: 'AutoBot AGV is a flatbed autonomous mobile robot (AMR) designed to automate material handling in warehouses and factory floors. Equipped with smart fleet intelligence, it navigates complex crowded layouts, coordinates movements with other vehicles, and delivers raw materials or completed packages directly to assembly lines without manual guidance.',
     specs: [
@@ -157,7 +138,7 @@ const productsData = {
     ]
   },
   car: {
-    name: 'Oziro CyberRover V1',
+    name: 'Autonomous Tactical Rover',
     tagline: 'Autonomous Tactical Robotic Car',
     desc: 'The CyberRover V1 is a high-speed, all-terrain autonomous robotic car designed for tactical mapping, logistics, and perimeter exploration. Equipped with an adaptive suspension chassis and direct-drive hub motors, it navigates complex terrain with high mobility. Utilizing dual-antenna RTK GPS and visual-inertial sensor suites, it conducts path planning and scanning routines independently.',
     specs: [
@@ -183,7 +164,7 @@ const productsData = {
     ]
   },
   hologram: {
-    name: 'HoloCore Projector',
+    name: 'Interactive Volumetric Projector',
     tagline: 'Interactive Volumetric Display System',
     desc: 'HoloCore Projector is a next-generation interactive volumetric display. By creating localized light scattering arrays, it projects floating 3D wireframe models, operational metrics, and telemetry diagrams directly in mid-air. Incorporating gesture tracking and LiDAR scanning modules, developers and operators can rotate, scale, and interact with the hologram using hand movements, without needing 3D glasses.',
     specs: [
@@ -254,13 +235,9 @@ const ProductDetail = () => {
 
           <div className={styles.canvasCol}>
             <div className={styles.canvasWrapper}>
-              <img 
-                src={productImageMap[productId?.toLowerCase()]} 
-                alt={product.name} 
-                className={styles.productImage} 
-              />
+              <ProductScene productId={productId} />
             </div>
-            <p className={styles.canvasHint}>High-Fidelity Virtual Design Prototype</p>
+            <p className={styles.canvasHint}>Interactive 3D Virtual Prototype</p>
           </div>
         </div>
 
