@@ -30,41 +30,13 @@
   margin: 0 auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.canvasContainer {
-  height: 500px;
-  position: relative;
+.centerForm {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.contactImage {
+  align-items: center;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 0 35px rgba(123, 97, 255, 0.2));
-  animation: floatContact 8s ease-in-out infinite;
-}
-
-@keyframes floatContact {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-1deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 

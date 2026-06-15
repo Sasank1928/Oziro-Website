@@ -24,13 +24,14 @@ const Home = () => {
       }
       const target = document.querySelector(scrollTarget);
       if (target) {
+        // Increase timeout to 500ms to allow full page render before scrolling
         const timer = setTimeout(() => {
           if (window.lenis) {
             window.lenis.scrollTo(target);
           } else {
             target.scrollIntoView({ behavior: 'smooth' });
           }
-        }, 150);
+        }, 500);
         return () => clearTimeout(timer);
       }
     }

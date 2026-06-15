@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './Contact.module.css';
-import hologramAvatar from '../../assets/hologram_avatar.png';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -35,21 +34,11 @@ const Contact = () => {
           </motion.p>
         </div>
 
-        <div className={styles.grid}>
-          <motion.div 
-            className={styles.canvasContainer}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <div className={styles.glowBg}></div>
-            <img src={hologramAvatar} alt="Oziro Contact Assistant" className={styles.contactImage} />
-          </motion.div>
-
+        <div className={styles.centerForm}>
           <motion.div 
             className={`${styles.formContainer} glass-panel`}
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <form onSubmit={handleSubmit} className={styles.form}>
@@ -77,7 +66,7 @@ const Contact = () => {
 
               <div className={styles.inputGroup}>
                 <label>Message</label>
-                <textarea required rows="4" placeholder="How can we help you automate?"></textarea>
+                <textarea required rows="5" placeholder="How can we help you automate?"></textarea>
               </div>
 
               <button type="submit" className={styles.submitBtn}>

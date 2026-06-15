@@ -1,8 +1,27 @@
 import React from 'react';
 import { FiTwitter, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollTo = (e, href) => {
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: href } });
+    } else {
+      const target = document.querySelector(href);
+      if (target) {
+        if (window.lenis) {
+          window.lenis.scrollTo(target);
+        } else {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -31,10 +50,10 @@ const Footer = () => {
           
           <div className={styles.linksColumn}>
             <h4>Company</h4>
-            <a href="#about">About Us</a>
+            <a href="#about" onClick={(e) => handleScrollTo(e, '#about')}>About Us</a>
             <a href="#">Careers</a>
             <a href="#">News & Press</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" onClick={(e) => handleScrollTo(e, '#contact')}>Contact</a>
           </div>
           
           <div className={styles.linksColumn}>
