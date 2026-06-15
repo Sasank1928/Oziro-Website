@@ -11,7 +11,7 @@ const colors = {
   metal: '#8FAEE0',
 };
 
-const DroneModel = () => {
+const DroneModel = ({ staticMode }) => {
   const group = useRef();
   const fan1 = useRef();
   const fan2 = useRef();
@@ -19,6 +19,7 @@ const DroneModel = () => {
   const fan4 = useRef();
 
   useFrame((state, delta) => {
+    if (staticMode) return;
     const t = state.clock.elapsedTime;
     if (group.current) {
       group.current.position.y = Math.sin(t * 2) * 0.2;
@@ -76,7 +77,7 @@ const DroneModel = () => {
   );
 };
 
-const RobotModel = () => {
+const RobotModel = ({ staticMode }) => {
   const group = useRef();
   const leftArm = useRef();
   const rightArm = useRef();
@@ -84,6 +85,7 @@ const RobotModel = () => {
   const rightLeg = useRef();
 
   useFrame((state) => {
+    if (staticMode) return;
     const t = state.clock.elapsedTime * 4;
     if (group.current) {
       group.current.position.y = Math.sin(t * 2) * 0.05;
@@ -136,7 +138,7 @@ const RobotModel = () => {
   );
 };
 
-const DogModel = () => {
+const DogModel = ({ staticMode }) => {
   const group = useRef();
   const flLeg = useRef();
   const frLeg = useRef();
@@ -144,6 +146,7 @@ const DogModel = () => {
   const brLeg = useRef();
 
   useFrame((state) => {
+    if (staticMode) return;
     const t = state.clock.elapsedTime * 6;
     if (group.current) {
       group.current.position.y = Math.sin(t * 2) * 0.05;
@@ -198,12 +201,13 @@ const DogModel = () => {
   );
 };
 
-const AgvModel = () => {
+const AgvModel = ({ staticMode }) => {
   const group = useRef();
   const scanner = useRef();
   const wheels = useRef([]);
 
   useFrame((state, delta) => {
+    if (staticMode) return;
     const t = state.clock.elapsedTime;
     if (group.current) {
       group.current.position.y = Math.sin(t * 3) * 0.02 - 0.2;
@@ -274,7 +278,7 @@ const AgvModel = () => {
   );
 };
 
-const CarModel = () => {
+const CarModel = ({ staticMode }) => {
   const wheels = useRef([]);
   const group = useRef();
 
@@ -326,13 +330,14 @@ const CarModel = () => {
   );
 };
 
-const ArmModel = () => {
+const ArmModel = ({ staticMode }) => {
   const base = useRef();
   const joint1 = useRef();
   const joint2 = useRef();
 
   useFrame((state) => {
-    const t = state.clock.elapsedTime;
+    if (staticMode) return;
+    const t = state.clock.elapsedTime * 1.5;
     if (base.current) base.current.rotation.y = Math.sin(t * 0.5) * 1.5;
     if (joint1.current) joint1.current.rotation.x = Math.sin(t) * 0.5 + 0.5;
     if (joint2.current) joint2.current.rotation.x = Math.sin(t * 1.5) * 0.8 - 0.5;
@@ -387,13 +392,14 @@ const ArmModel = () => {
   );
 };
 
-const HologramModel = () => {
+const HologramModel = ({ staticMode }) => {
   const ring1 = useRef();
   const ring2 = useRef();
   const ring3 = useRef();
   const core = useRef();
 
   useFrame((state, delta) => {
+    if (staticMode) return;
     if (ring1.current) {
       ring1.current.rotation.x += delta;
       ring1.current.rotation.y += delta * 0.5;
@@ -437,7 +443,7 @@ const HologramModel = () => {
   );
 };
 
-const ProductScene = ({ productId, isThumbnail = false }) => {
+const ProductScene = ({ productId, isThumbnail = false, staticMode = false }) => {
   const id = productId?.toLowerCase();
 
   let Model = HologramModel;
@@ -455,15 +461,15 @@ const ProductScene = ({ productId, isThumbnail = false }) => {
       <pointLight position={[-5, 5, -5]} intensity={1.8} color={colors.secondary} />
       <pointLight position={[0, -2, 0]} intensity={1.5} color={colors.primary} />
 
-      <Model />
+      <Model staticMode={staticMode} />
 
-      {/* Disable orbit controls on thumbnail cards to prevent scroll hijacking */}
-      <OrbitControls
-        enableZoom={!isThumbnail}
-        enablePan={false}
-        enableRotate={!isThumbnail}
-        autoRotate
-        autoRotateSpeed={1}
+      {/* Disable orbit controls to prevent scroll hijacking and keep it fixed */}
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false} 
+        enableRotate={false}
+        autoRotate={!staticMode} 
+        autoRotateSpeed={1} 
       />
     </Canvas>
   );

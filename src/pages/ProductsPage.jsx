@@ -3,23 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import styles from './ProductsPage.module.css';
 import ProductScene from '../components/3d/ProductScene';
-import humanoidAvatar from '../assets/humanoid_avatar.png';
-import dogAvatar from '../assets/dog_avatar.png';
-import carAvatar from '../assets/car_avatar.png';
-import agvAvatar from '../assets/agv_avatar.png';
-import armAvatar from '../assets/arm_avatar.png';
-import droneAvatar from '../assets/drone_avatar.png';
-import hologramAvatar from '../assets/hologram_avatar.png';
-
-const avatars = {
-  humanoid: humanoidAvatar,
-  dog: dogAvatar,
-  car: carAvatar,
-  agv: agvAvatar,
-  arm: armAvatar,
-  drone: droneAvatar,
-  hologram: hologramAvatar
-};const products = [
+const products = [
   { id: 'humanoid', name: 'Humanoid Assistant Robot', spec: 'Next-gen bipedal humanoid assistant' },
   { id: 'dog', name: 'All-Terrain Quadruped Robot', spec: 'All-terrain quadruped robotic platform' },
   { id: 'car', name: 'Autonomous Tactical Rover', spec: 'High-speed autonomous tactical rover car' },
@@ -29,7 +13,7 @@ const avatars = {
   { id: 'hologram', name: 'Interactive Volumetric Projector', spec: 'Interactive volumetric display projector' },
 ];
 
-const TiltCard = ({ children, p, idx, navigate, isMobile }) => {
+const TiltCard = ({ children, p, idx, navigate }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -80,11 +64,7 @@ const TiltCard = ({ children, p, idx, navigate, isMobile }) => {
         }}
       >
         <div className={styles.cardImageWrapper} style={{ transform: "translateZ(70px)", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {isMobile ? (
-            <img src={avatars[p.id]} alt={p.name} style={{ width: '80%', height: '80%', objectFit: 'contain', filter: 'drop-shadow(0 0 20px rgba(0, 229, 255, 0.3))' }} />
-          ) : (
-            <ProductScene productId={p.id} isThumbnail={true} />
-          )}
+          <ProductScene productId={p.id} isThumbnail={true} />
         </div>
         <div className={styles.cardContent} style={{ transform: "translateZ(40px)" }}>
           <h3 className={styles.cardTitle}>{p.name}</h3>
@@ -103,14 +83,6 @@ const TiltCard = ({ children, p, idx, navigate, isMobile }) => {
 
 const ProductsPage = () => {
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <div className={styles.page}>
@@ -123,7 +95,7 @@ const ProductsPage = () => {
 
         <div className={styles.productsGrid}>
           {products.map((p, idx) => (
-            <TiltCard key={p.id} p={p} idx={idx} navigate={navigate} isMobile={isMobile} />
+            <TiltCard key={p.id} p={p} idx={idx} navigate={navigate} />
           ))}
         </div>
       </div>

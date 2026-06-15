@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BsArrowRight, BsGearWideConnected } from 'react-icons/bs';
 import styles from './ProductsTeaser.module.css';
-import carAvatar from '../../assets/car_avatar.png';
+import ProductScene from '../3d/ProductScene';
 
 const ProductsTeaser = () => {
   const navigate = useNavigate();
@@ -42,8 +42,8 @@ const ProductsTeaser = () => {
             <div className={styles.meshGlow}></div>
             <div className={styles.hologramRing}></div>
             <div className={styles.hologramRingOuter}></div>
-            <div className={styles.visualImage} style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <img src={carAvatar} alt="Oziro CyberRover" style={{ width: '80%', height: '80%', objectFit: 'contain', filter: 'drop-shadow(0 0 30px rgba(0, 229, 255, 0.4))' }} />
+            <div className={styles.visualImage} style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10}}>
+              <ProductScene productId="car" staticMode={true} />
             </div>
           </div>
         </div>

@@ -3,15 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styles from './PopularProducts.module.css';
 import ProductScene from '../3d/ProductScene';
-import humanoidAvatar from '../../assets/humanoid_avatar.png';
-import droneAvatar from '../../assets/drone_avatar.png';
-import armAvatar from '../../assets/arm_avatar.png';
 
-const avatars = {
-  humanoid: humanoidAvatar,
-  drone: droneAvatar,
-  arm: armAvatar,
-};
 
 const popularItems = [
   {
@@ -36,14 +28,6 @@ const popularItems = [
 
 const PopularProducts = () => {
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   return (
     <section className={styles.section} id="popular-products">
@@ -66,11 +50,7 @@ const PopularProducts = () => {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
                 <div className={styles.canvasWrapper} style={{ height: '220px', width: '100%', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {isMobile ? (
-                    <img src={avatars[item.id]} alt={item.name} style={{ width: '80%', height: '80%', objectFit: 'contain', filter: 'drop-shadow(0 0 20px rgba(0, 229, 255, 0.3))' }} />
-                  ) : (
-                    <ProductScene productId={item.id} isThumbnail={true} />
-                  )}
+                  <ProductScene productId={item.id} isThumbnail={true} />
                 </div>
 
                 <div className={styles.content}>
